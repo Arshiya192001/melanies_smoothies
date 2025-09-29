@@ -39,8 +39,6 @@ if ingredients_list:
     #Build a SQL Insert Statement & Test It
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
             values ('""" + ingredients_string + """','"""+name_on_order+ """')"""
-
-
     
     st.write(my_insert_stmt)
     #st.stop()
@@ -52,3 +50,8 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success("Your Smoothie is ordered"+ ","+"" +name_on_order+"" + "!", icon="✅")
+
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
+
