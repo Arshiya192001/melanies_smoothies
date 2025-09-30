@@ -46,7 +46,6 @@ if ingredients_list:
         #st.write('The search value for', fruits_chosen,' is', search_on, '.')
 
         st.subheader(fruits_chosen + 'Nutrition Information')
-        import requests
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
         st.text(smoothiefroot_response)
 
