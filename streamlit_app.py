@@ -46,7 +46,7 @@ if ingredients_list:
       fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + search_on)
     #st.write(ingredients_string)
     
-    my_insert_stmt = """ insert into smoothies.public.orders(ingredients)
+    my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
             values ('""" + ingredients_string + """','"""+name_on_order+"""')"""
     #st.write(my_insert_stmt)
     #st.stop()
